@@ -8,6 +8,38 @@ import { Check, Phone, Mail, CheckCircle2, HelpCircle, X, User, AtSign } from "l
 const WHATSAPP_NUMBER = "5581994071330";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1%2C+gostaria+de+falar+com+o+escrit%C3%B3rio+sobre+uma+quest%C3%A3o+jur%C3%ADdica.`;
 
+
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
+const reportConversion = (url: string) => {
+  if (typeof window !== 'undefined') {
+    if (window.gtag) {
+      // Flag to prevent double opening
+      let opened = false;
+      const openUrl = () => {
+        if (!opened) {
+          opened = true;
+          window.open(url, '_blank');
+        }
+      };
+
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-11039252214/_w8QCNGOpYkdEPa99o8p',
+        'event_callback': openUrl
+      });
+      
+      // Fallback if event_callback doesn't fire
+      setTimeout(openUrl, 1000);
+    } else {
+      window.open(url, '_blank');
+    }
+  }
+};
+
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -17,7 +49,7 @@ export default function Home() {
     const nome = (target.elements.namedItem('modal_nome') as HTMLInputElement).value;
     const telefone = (target.elements.namedItem('modal_telefone') as HTMLInputElement).value;
     const msg = `Olá, sou ${nome}. Meu telefone/WhatsApp é ${telefone}. Solicito uma ligação.`;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    reportConversion(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`);
   };
 
   return (
@@ -392,7 +424,7 @@ export default function Home() {
               const telefone = (target.elements.namedItem('telefone') as HTMLInputElement).value;
               const assunto = (target.elements.namedItem('assunto') as HTMLSelectElement).value;
               const msg = `Olá, sou ${nome}. Meu WhatsApp é ${telefone}. Gostaria de falar sobre ${assunto}.`;
-              window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+              reportConversion(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`);
             }}
           >
             <div className="mb-4">
@@ -460,7 +492,7 @@ export default function Home() {
       </footer>
 
       {/* Floating WhatsApp */}
-      <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="fixed right-5 bottom-5 z-50 w-14 h-14 rounded-full bg-[#1aa65b] text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform" aria-label="Falar com o escritório pelo WhatsApp">
+      <a href={WHATSAPP_LINK} onClick={(e) => { e.preventDefault(); reportConversion(WHATSAPP_LINK); }} target="_blank" rel="noopener noreferrer" className="fixed right-5 bottom-5 z-50 w-14 h-14 rounded-full bg-[#1aa65b] text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform" aria-label="Falar com o escritório pelo WhatsApp">
         <Phone size={24} fill="currentColor" />
       </a>
 
@@ -500,7 +532,7 @@ export default function Home() {
             
             <div className="text-center my-6 text-gray-400 text-sm">-- OU --</div>
             
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-[#00c896] text-white font-bold h-12 rounded-sm hover:bg-[#00b084] transition-colors text-sm uppercase tracking-wide">
+            <a href={WHATSAPP_LINK} onClick={(e) => { e.preventDefault(); reportConversion(WHATSAPP_LINK); }} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-[#00c896] text-white font-bold h-12 rounded-sm hover:bg-[#00b084] transition-colors text-sm uppercase tracking-wide">
               Fale conosco pelo WhatsApp
             </a>
           </div>

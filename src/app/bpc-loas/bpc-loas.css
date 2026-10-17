@@ -1,0 +1,152 @@
+.bpc-page{
+  --green-deep:#1F4A3D;
+  --green-mid:#2E5F4E;
+  --linen:#F2EFE6;
+  --linen-warm:#EAE5D6;
+  --ink:#22261F;
+  --ink-soft:#4A4F45;
+  --gold:#B4842A;
+  --gold-deep:#8F6A20;
+  --white:#FFFDF9;
+  --line:#D9D3C0;
+  --radius:4px;
+  --serif:var(--font-fraunces),Georgia,serif;
+  --sans:var(--font-inter),system-ui,sans-serif;
+
+  min-height:100vh;
+  background:var(--linen);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.6;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+.bpc-page *{box-sizing:border-box; margin:0; padding:0;}
+.bpc-page h1,.bpc-page h2,.bpc-page h3,.bpc-page .serif{font-family:var(--serif);}
+.bpc-page a{color:inherit;}
+.bpc-page img{max-width:100%; display:block;}
+.bpc-page .wrap{max-width:680px; margin:0 auto; padding:0 24px;}
+.bpc-page .wrap-wide{max-width:920px; margin:0 auto; padding:0 24px;}
+
+/* Header */
+.bpc-page header{
+  position:sticky; top:0; z-index:40;
+  background:rgba(242,239,230,0.94);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.bpc-page .header-inner{
+  max-width:920px; margin:0 auto; padding:14px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.bpc-page .brand{
+  font-family:var(--serif); font-weight:600; font-size:19px; color:var(--green-deep);
+  line-height:1.2;
+}
+.bpc-page .brand small{display:block; font-family:var(--sans); font-weight:500; font-size:11px; color:var(--ink-soft); letter-spacing:0.02em;}
+.bpc-page .wa-btn{display:inline-block;}
+.bpc-page .wa-btn.full{display:block;}
+.bpc-page .hdr-cta .short{display:none;}
+
+/* Hero */
+.bpc-page .hero{padding:64px 0 48px;}
+.bpc-page .eyebrow{
+  display:inline-block; color:var(--gold-deep); font-weight:600; font-size:14px;
+  margin-bottom:18px;
+}
+.bpc-page .hero h1{
+  font-size:clamp(30px, 5.4vw, 44px);
+  font-weight:500;
+  line-height:1.18;
+  color:var(--green-deep);
+  letter-spacing:-0.01em;
+  max-width:15ch;
+}
+.bpc-page .hero p{
+  margin-top:20px; font-size:18px; color:var(--ink-soft); max-width:48ch;
+}
+.bpc-page .hero .cta-row{margin-top:32px; display:flex; flex-wrap:wrap; gap:14px; align-items:center;}
+.bpc-page .hero .cta-note{font-size:14px; color:var(--ink-soft);}
+
+/* Reconhecimento */
+.bpc-page .recon{padding:8px 0 56px;}
+.bpc-page .recon blockquote{
+  border-left:3px solid var(--gold);
+  padding:4px 0 4px 22px;
+  font-family:var(--serif); font-weight:500; font-size:22px;
+  line-height:1.45; color:var(--green-deep);
+  font-style:normal;
+}
+.bpc-page .recon p{margin-top:18px; color:var(--ink-soft); max-width:56ch;}
+
+/* Section shared */
+.bpc-page section{padding:56px 0;}
+.bpc-page .section-alt{background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+.bpc-page h2{font-size:clamp(24px,3.6vw,30px); font-weight:500; color:var(--green-deep); max-width:20ch;}
+.bpc-page .section-lead{color:var(--ink-soft); margin-top:12px; max-width:52ch;}
+
+/* Steps */
+.bpc-page .steps{margin-top:36px; display:flex; flex-direction:column; gap:0;}
+.bpc-page .step{
+  display:flex; gap:20px; padding:24px 0;
+  border-top:1px solid var(--line);
+}
+.bpc-page .step:last-child{border-bottom:1px solid var(--line);}
+.bpc-page .step-num{
+  font-family:var(--serif); font-size:22px; font-weight:500; color:var(--gold-deep);
+  width:36px; flex-shrink:0;
+}
+.bpc-page .step-body h3{font-family:var(--sans); font-weight:700; font-size:17px; color:var(--ink);}
+.bpc-page .step-body p{margin-top:6px; color:var(--ink-soft); font-size:15.5px;}
+
+/* Perfis */
+.bpc-page .perfis{margin-top:36px; display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line);}
+.bpc-page .perfil{background:var(--white); padding:26px 22px;}
+.bpc-page .perfil h3{font-family:var(--serif); font-weight:500; font-size:19px; color:var(--green-deep);}
+.bpc-page .perfil p{margin-top:10px; font-size:14.5px; color:var(--ink-soft);}
+
+/* Pilar */
+.bpc-page .pilar{padding:60px 0; background:var(--green-deep); color:var(--linen);}
+.bpc-page .pilar .wrap-wide{text-align:left;}
+.bpc-page .pilar p.tag{color:#C9D8CD; font-weight:600; font-size:14px; margin-bottom:14px;}
+.bpc-page .pilar h2{color:var(--white); max-width:22ch;}
+.bpc-page .pilar-sub{margin-top:16px; color:#D7E2D9; max-width:54ch; font-size:16px;}
+
+/* FAQ */
+.bpc-page .faq-item{border-top:1px solid var(--line);}
+.bpc-page .faq-item:last-child{border-bottom:1px solid var(--line);}
+.bpc-page .faq-q{
+  width:100%; text-align:left; background:none; border:none; cursor:pointer;
+  padding:20px 0; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  font-family:var(--sans); font-weight:600; font-size:16px; color:var(--ink);
+}
+.bpc-page .faq-q .plus{font-size:22px; color:var(--gold-deep); flex-shrink:0; transition:transform .2s ease; font-weight:400;}
+.bpc-page .faq-item.open .plus{transform:rotate(45deg);}
+.bpc-page .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+.bpc-page .faq-a p{padding:0 0 20px; color:var(--ink-soft); font-size:15.5px; max-width:56ch;}
+
+/* Final CTA */
+.bpc-page .final-cta{padding:64px 0 80px; text-align:left;}
+.bpc-page .final-cta h2{max-width:18ch;}
+.bpc-page .final-cta p{margin-top:14px; color:var(--ink-soft); max-width:48ch;}
+.bpc-page .final-cta .cta-btn{margin-top:26px;}
+
+.bpc-page footer{background:var(--linen-warm); border-top:1px solid var(--line); padding:32px 0 96px;}
+.bpc-page footer p{font-size:13px; color:var(--ink-soft); line-height:1.7;}
+.bpc-page footer .fnote{margin-top:8px; color:#8A8577;}
+
+/* Sticky mobile WhatsApp bar */
+.bpc-page .sticky-cta{
+  position:fixed; bottom:0; left:0; right:0; z-index:50;
+  background:var(--white); border-top:1px solid var(--line);
+  padding:12px 16px; display:none;
+  box-shadow:0 -4px 14px rgba(0,0,0,0.06);
+}
+
+@media (max-width:760px){
+  .bpc-page .perfis{grid-template-columns:1fr;}
+  .bpc-page .hdr-cta .long{display:none;}
+  .bpc-page .hdr-cta .short{display:inline-block;}
+  .bpc-page .sticky-cta{display:block;}
+  .bpc-page{padding-bottom:78px;}
+}

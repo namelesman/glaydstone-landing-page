@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import RadialRevealButton from "@/components/RadialRevealButton";
+import { WA_ICON } from "@/components/whatsappIcon";
 import Image from "next/image";
 import { Check, Phone, Mail, CheckCircle2, HelpCircle, X, User, AtSign } from "lucide-react";
 
@@ -28,7 +29,7 @@ const reportConversion = (url: string) => {
       };
 
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-11039252214/_w8QCNGOpYkdEPa99o8p',
+        'send_to': 'AW-365000288/PkYoCLunk40dEODsha4B',
         'event_callback': openUrl
       });
       
@@ -71,7 +72,6 @@ export default function Home() {
             <a href="#atuacao" className="hover:text-white transition-colors">Atuação</a>
             <a href="#vantagens" className="hover:text-white transition-colors">Vantagens</a>
             <a href="#escritorio" className="hover:text-white transition-colors">O escritório</a>
-            <a href="#depoimentos" className="hover:text-white transition-colors">Depoimentos</a>
             <a href="#contato" className="hover:text-white transition-colors">Contato</a>
           </nav>
 
@@ -203,8 +203,8 @@ export default function Home() {
                 desc: "Nosso atendimento pode ser online. Você pode falar com a gente de onde estiver e quando precisar. Nossa equipe de advogados está pronta para lhe atender.",
               },
               {
-                title: "Advocacia especializada",
-                desc: "Somos um Escritório Especializado e Pós-graduado em Direito Trabalhista e Direito Previdenciário.",
+                title: "Atuação focada",
+                desc: "Somos um Escritório com atuação em Direito Trabalhista e Previdenciário.",
               },
               {
                 title: "Agilidade",
@@ -257,8 +257,8 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td className="p-6 border border-line">
-                    <strong className="block mb-1 text-navy">Advocacia especializada</strong>
-                    <span className="text-muted">Somos um Escritório Especializado e Pós-graduado em Direito Trabalhista e Direito Previdenciário.</span>
+                    <strong className="block mb-1 text-navy">Atuação focada</strong>
+                    <span className="text-muted">Somos um Escritório com atuação em Direito Trabalhista e Previdenciário.</span>
                   </td>
                   <td className="p-6 border border-line text-center">
                     <CheckCircle2 className="mx-auto text-green-400" size={26} strokeWidth={2} />
@@ -350,39 +350,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Depoimentos */}
-      <section id="depoimentos" className="py-24 bg-cream border-b border-line">
-        <div className="container mx-auto px-5 max-w-6xl">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-[#8d6d35] text-[11px] tracking-[2.3px] font-bold mb-4 block">DEPOIMENTOS</span>
-            <h2 className="font-serif text-3xl md:text-5xl tracking-tight text-navy">O que falam nossos clientes?</h2>
-            <p className="text-muted mt-4">É por causa disso que trabalhamos forte diariamente.</p>
+      {/* BPC/LOAS */}
+      <section className="bg-cream py-12 border-y border-line">
+        <div className="container mx-auto px-5 max-w-6xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <span className="block text-[#8d6d35] text-[10px] font-bold tracking-[2px]">BPC/LOAS</span>
+            <strong className="block font-serif text-2xl mt-1">O INSS negou o BPC/LOAS?</strong>
+            <p className="text-muted text-sm mt-1">Entenda como funciona o atendimento para quem teve o benefício assistencial negado.</p>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                text: "Muita eficiência e bom atendimento. O escritório tem pluralidade, atuando nas diversas áreas do direito.",
-                name: "Sheilla Silveira"
-              },
-              {
-                text: "Profissional exemplar, dedicado e que conseguiu resolver meu problema. Muito bem atendida, indico para quem estiver precisando de um advogado com um vasto conhecimento.",
-                name: "Yannara Daniel"
-              },
-              {
-                text: "Excelente advogado muito competente está de parabéns obrigado pela atenção!",
-                name: "Elisabete Marques"
-              }
-            ].map((d, i) => (
-              <div key={i} className="bg-white border border-line p-8 shadow-sm">
-                <p className="text-muted text-sm italic mb-6">"{d.text}"</p>
-                <div>
-                  <strong className="block font-serif text-navy">{d.name}</strong>
-                  <span className="text-xs text-gold">Cliente</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <RadialRevealButton
+            label="Saiba mais sobre BPC/LOAS"
+            link="/bpc-loas"
+            newTab={false}
+            colors={{ fill: "#0d1b2a", textColor: "#ffffff", hoverFill: "#12263a", hoverTextColor: "#ffffff" }}
+            border={{ borderWidth: 0 }}
+            font={{ fontSize: 13, fontWeight: 700 }}
+          />
         </div>
       </section>
 
@@ -483,7 +466,7 @@ export default function Home() {
           <div className="flex flex-col gap-1 md:text-right">
             <strong className="font-serif text-lg">Glaydstone Daniel</strong>
             <span className="text-white/55 text-xs">OAB/PE 34.574</span>
-            <a href="/politica-de-privacidade.html" className="text-white/55 text-xs hover:text-white transition-colors">Política de Privacidade</a>
+            <a href="/politica-de-privacidade" className="text-white/55 text-xs hover:text-white transition-colors">Política de Privacidade</a>
           </div>
         </div>
         <div className="container mx-auto px-5 max-w-6xl mt-10 pt-4 border-t border-white/10 text-white/40 text-[10px]">
@@ -492,9 +475,18 @@ export default function Home() {
       </footer>
 
       {/* Floating WhatsApp */}
-      <a href={WHATSAPP_LINK} onClick={(e) => { e.preventDefault(); reportConversion(WHATSAPP_LINK); }} target="_blank" rel="noopener noreferrer" className="fixed right-5 bottom-5 z-50 w-14 h-14 rounded-full bg-[#1aa65b] text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform" aria-label="Falar com o escritório pelo WhatsApp">
-        <Phone size={24} fill="currentColor" />
-      </a>
+      <div className="fixed right-5 bottom-5 z-50 rounded-full shadow-lg" onClick={() => reportConversion(WHATSAPP_LINK)}>
+        <RadialRevealButton
+          label="Falar com o escritório pelo WhatsApp"
+          showText={false}
+          addIcon
+          icon={{ type: "image", image: WA_ICON, size: 26, side: "left" }}
+          colors={{ fill: "#1aa65b", textColor: "#ffffff", hoverFill: "#148a4b", hoverTextColor: "#ffffff" }}
+          border={{ borderWidth: 0 }}
+          padding="0"
+          style={{ width: 56, height: 56 }}
+        />
+      </div>
 
       {/* Modal - Fale Conosco Agora */}
       {isModalOpen && (
@@ -525,16 +517,39 @@ export default function Home() {
                 <input id="modal_mensagem" name="modal_mensagem" type="text" placeholder="Sua Mensagem" className="w-full h-12 pl-12 pr-4 border border-line rounded-sm focus:border-[#d97736] outline-none text-sm placeholder:text-gray-400" />
               </div>
               
-              <button type="submit" className="w-full mt-2 bg-[#d97736] text-white font-bold h-12 rounded-sm hover:bg-[#c2662c] transition-colors text-sm uppercase tracking-wide">
-                Solicite uma ligação grátis
-              </button>
+              <div className="w-full pt-2" onClick={(e) => {
+                const form = e.currentTarget.closest('form');
+                if (form && form.checkValidity()) {
+                  form.requestSubmit();
+                } else if (form) {
+                  form.reportValidity();
+                }
+              }}>
+                <RadialRevealButton
+                  label="SOLICITE UMA LIGAÇÃO GRÁTIS"
+                  colors={{ fill: "#d97736", textColor: "#ffffff", hoverFill: "#c2662c", hoverTextColor: "#ffffff" }}
+                  border={{ borderWidth: 0 }}
+                  font={{ fontSize: 14, fontWeight: 700, lineHeight: "20px", letterSpacing: "0.025em" }}
+                  padding="14px 16px"
+                  rounded={8}
+                  style={{ width: '100%' }}
+                />
+              </div>
             </form>
             
             <div className="text-center my-6 text-gray-400 text-sm">-- OU --</div>
             
-            <a href={WHATSAPP_LINK} onClick={(e) => { e.preventDefault(); reportConversion(WHATSAPP_LINK); }} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full bg-[#00c896] text-white font-bold h-12 rounded-sm hover:bg-[#00b084] transition-colors text-sm uppercase tracking-wide">
-              Fale conosco pelo WhatsApp
-            </a>
+            <div className="w-full" onClick={() => reportConversion(WHATSAPP_LINK)}>
+              <RadialRevealButton
+                label="FALE CONOSCO PELO WHATSAPP"
+                colors={{ fill: "#00c896", textColor: "#ffffff", hoverFill: "#00b084", hoverTextColor: "#ffffff" }}
+                border={{ borderWidth: 0 }}
+                font={{ fontSize: 14, fontWeight: 700, lineHeight: "20px", letterSpacing: "0.025em" }}
+                padding="14px 16px"
+                rounded={8}
+                style={{ width: '100%' }}
+              />
+            </div>
           </div>
         </div>
       )}

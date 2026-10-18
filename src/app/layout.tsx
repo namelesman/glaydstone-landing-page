@@ -15,7 +15,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Glaydstone Daniel | Advocacia Trabalhista e Previdenciária",
-  description: "Especialista em Direito Trabalhista e Previdenciário.",
+  description: "Advocacia Trabalhista e Previdenciária em Pernambuco.",
 };
 
 export default function RootLayout({

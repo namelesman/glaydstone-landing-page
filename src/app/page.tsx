@@ -28,7 +28,7 @@ const reportConversion = (url: string) => {
       };
 
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-11039252214/_w8QCNGOpYkdEPa99o8p',
+        'send_to': 'AW-365000288/PkYoCLunk40dEODsha4B',
         'event_callback': openUrl
       });
       
@@ -71,7 +71,6 @@ export default function Home() {
             <a href="#atuacao" className="hover:text-white transition-colors">Atuação</a>
             <a href="#vantagens" className="hover:text-white transition-colors">Vantagens</a>
             <a href="#escritorio" className="hover:text-white transition-colors">O escritório</a>
-            <a href="#depoimentos" className="hover:text-white transition-colors">Depoimentos</a>
             <a href="#contato" className="hover:text-white transition-colors">Contato</a>
           </nav>
 
@@ -203,8 +202,8 @@ export default function Home() {
                 desc: "Nosso atendimento pode ser online. Você pode falar com a gente de onde estiver e quando precisar. Nossa equipe de advogados está pronta para lhe atender.",
               },
               {
-                title: "Advocacia especializada",
-                desc: "Somos um Escritório Especializado e Pós-graduado em Direito Trabalhista e Direito Previdenciário.",
+                title: "Atuação focada",
+                desc: "Somos um Escritório com atuação em Direito Trabalhista e Previdenciário.",
               },
               {
                 title: "Agilidade",
@@ -257,8 +256,8 @@ export default function Home() {
                 </tr>
                 <tr>
                   <td className="p-6 border border-line">
-                    <strong className="block mb-1 text-navy">Advocacia especializada</strong>
-                    <span className="text-muted">Somos um Escritório Especializado e Pós-graduado em Direito Trabalhista e Direito Previdenciário.</span>
+                    <strong className="block mb-1 text-navy">Atuação focada</strong>
+                    <span className="text-muted">Somos um Escritório com atuação em Direito Trabalhista e Previdenciário.</span>
                   </td>
                   <td className="p-6 border border-line text-center">
                     <CheckCircle2 className="mx-auto text-green-400" size={26} strokeWidth={2} />
@@ -347,42 +346,6 @@ export default function Home() {
             Entender a situação é o primeiro passo para saber quais possibilidades jurídicas podem ser avaliadas.
           </blockquote>
           <p className="text-gold-light text-xs tracking-[2px] uppercase">Glaydstone Daniel Advocacia</p>
-        </div>
-      </section>
-
-      {/* Depoimentos */}
-      <section id="depoimentos" className="py-24 bg-cream border-b border-line">
-        <div className="container mx-auto px-5 max-w-6xl">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-[#8d6d35] text-[11px] tracking-[2.3px] font-bold mb-4 block">DEPOIMENTOS</span>
-            <h2 className="font-serif text-3xl md:text-5xl tracking-tight text-navy">O que falam nossos clientes?</h2>
-            <p className="text-muted mt-4">É por causa disso que trabalhamos forte diariamente.</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                text: "Muita eficiência e bom atendimento. O escritório tem pluralidade, atuando nas diversas áreas do direito.",
-                name: "Sheilla Silveira"
-              },
-              {
-                text: "Profissional exemplar, dedicado e que conseguiu resolver meu problema. Muito bem atendida, indico para quem estiver precisando de um advogado com um vasto conhecimento.",
-                name: "Yannara Daniel"
-              },
-              {
-                text: "Excelente advogado muito competente está de parabéns obrigado pela atenção!",
-                name: "Elisabete Marques"
-              }
-            ].map((d, i) => (
-              <div key={i} className="bg-white border border-line p-8 shadow-sm">
-                <p className="text-muted text-sm italic mb-6">"{d.text}"</p>
-                <div>
-                  <strong className="block font-serif text-navy">{d.name}</strong>
-                  <span className="text-xs text-gold">Cliente</span>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

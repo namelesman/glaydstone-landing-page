@@ -16,7 +16,7 @@ const GOLD = { fill: "#B4842A", textColor: "#FFFDF9", hoverFill: "#8F6A20", hove
 // Conversão: clique em qualquer botão de WhatsApp.
 const reportConversion = () => {
   try {
-    window.gtag?.("event", "conversion", { send_to: "AW-11039252214/_w8QCNGOpYkdEPa99o8p" });
+    window.gtag?.("event", "conversion", { send_to: "AW-365000288/PkYoCLunk40dEODsha4B" });
   } catch {}
 };
 

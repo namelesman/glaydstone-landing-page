@@ -204,7 +204,7 @@ export default function Home() {
               },
               {
                 title: "Atuação focada",
-                desc: "Somos um Escritório com atuação em Direito Trabalhista e Previdenciário.",
+                desc: "Somos um escritório de advocacia trabalhista e previdenciária em Pernambuco.",
               },
               {
                 title: "Agilidade",
@@ -258,7 +258,7 @@ export default function Home() {
                 <tr>
                   <td className="p-6 border border-line">
                     <strong className="block mb-1 text-navy">Atuação focada</strong>
-                    <span className="text-muted">Somos um Escritório com atuação em Direito Trabalhista e Previdenciário.</span>
+                    <span className="text-muted">Somos um escritório de advocacia trabalhista e previdenciária em Pernambuco.</span>
                   </td>
                   <td className="p-6 border border-line text-center">
                     <CheckCircle2 className="mx-auto text-green-400" size={26} strokeWidth={2} />

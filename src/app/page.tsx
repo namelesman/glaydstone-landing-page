@@ -16,6 +16,11 @@ declare global {
   }
 }
 
+// Para links com target="_blank": a página fica aberta, então só dispara o evento.
+const trackConversion = () => {
+  window.gtag?.('event', 'conversion', { send_to: 'AW-365000288/PkYoCLunk40dEODsha4B' });
+};
+
 const reportConversion = (url: string) => {
   if (typeof window !== 'undefined') {
     if (window.gtag) {
@@ -79,6 +84,7 @@ export default function Home() {
             <RadialRevealButton 
               label="Falar com o escritório" 
               link={WHATSAPP_LINK} 
+              onClick={trackConversion}
               colors={{ fill: "#ffffff", textColor: "#0d1b2a", hoverFill: "#b9975b", hoverTextColor: "#ffffff" }}
               border={{ borderWidth: 0 }}
               font={{ fontSize: 13, fontWeight: 700 }}
@@ -108,6 +114,7 @@ export default function Home() {
               <RadialRevealButton 
                 label="Falar com o escritório" 
                 link={WHATSAPP_LINK}
+                onClick={trackConversion}
                 colors={{ fill: "#b9975b", textColor: "#ffffff", hoverFill: "#a8874f", hoverTextColor: "#ffffff" }}
                 border={{ borderWidth: 0 }}
                 font={{ fontSize: 13, fontWeight: 700 }}
@@ -140,6 +147,7 @@ export default function Home() {
           <RadialRevealButton 
             label="Enviar mensagem pelo WhatsApp" 
             link={WHATSAPP_LINK}
+            onClick={trackConversion}
             colors={{ fill: "#0d1b2a", textColor: "#ffffff", hoverFill: "#12263a", hoverTextColor: "#ffffff" }}
             border={{ borderWidth: 0 }}
             font={{ fontSize: 13, fontWeight: 700 }}
@@ -331,6 +339,7 @@ export default function Home() {
             <RadialRevealButton 
               label="Conversar com o escritório" 
               link={WHATSAPP_LINK}
+              onClick={trackConversion}
               colors={{ fill: "#b9975b", textColor: "#ffffff", hoverFill: "#a8874f", hoverTextColor: "#ffffff" }}
               border={{ borderWidth: 0 }}
               font={{ fontSize: 13, fontWeight: 700 }}

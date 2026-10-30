@@ -64,6 +64,7 @@ type Props = {
   transition?: Transition;
   newTab?: boolean;
   style?: React.CSSProperties;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
 };
 
 type BandWidths = { top: number; right: number; bottom: number; left: number };
@@ -153,6 +154,7 @@ export default function RadialRevealButton({
   transition = DEFAULT_TRANSITION,
   newTab = true,
   style,
+  onClick,
 }: Props) {
   const fill = colors?.fill ?? fillProp ?? "#000000";
   const textColor = colors?.textColor ?? textColorProp ?? "#FFFFFF";
@@ -255,6 +257,7 @@ export default function RadialRevealButton({
   const Tag: any = link ? "a" : "button";
   const tagProps = {
     "aria-label": showText ? undefined : label || undefined,
+    onClick,
     ...(link
       ? {
           href: link,
